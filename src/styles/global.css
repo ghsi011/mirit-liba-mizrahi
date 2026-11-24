@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+:root {
+  color-scheme: light;
+  font-family: Arial, sans-serif;
+  color: #343c30;
+  background: #f5f3ec;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-inline-size: 280px;
+}
+
+.memorial {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: clamp(3rem, 8vw, 8rem);
+  max-inline-size: 1140px;
+  min-block-size: 100svh;
+  margin-inline: auto;
+  padding: clamp(3rem, 8vh, 7rem) clamp(1.5rem, 5vw, 4rem);
+}
+
+.dedication {
+  padding-block: 2rem;
+}
+
+.quiet-mark {
+  display: block;
+  inline-size: 2.5rem;
+  block-size: 1px;
+  background: #858a71;
+  margin-block-end: 2.5rem;
+}
+
+h1 {
+  font-family: 'Noto Serif Hebrew', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(2.65rem, 5.3vw, 4.9rem);
+  line-height: 1.5;
+  letter-spacing: -0.035em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.dedication p {
+  color: #626951;
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  line-height: 1.8;
+  margin-block: 1.5rem 0;
+}
+
+.olive {
+  display: block;
+  inline-size: 5.5rem;
+  block-size: 2.5rem;
+  margin-block-start: 3rem;
+  stroke: #838a6d;
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.portrait {
+  position: relative;
+  display: grid;
+  place-items: center;
+  inline-size: 100%;
+  max-inline-size: 400px;
+  aspect-ratio: 4 / 5;
+  margin: 0;
+  padding: 0.75rem;
+  background: #eae8de;
+  border: 1px solid #d6d6c8;
+  box-shadow: 0 10px 32px #343c3006;
+}
+
+.portrait img {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  max-block-size: 100%;
+  object-fit: contain;
+}
+
+.portrait--empty {
+  grid-template-rows: 1fr auto;
+  background: linear-gradient(155deg, #efeee6, #e8e7dc);
+}
+
+.portrait-space {
+  display: grid;
+  place-items: center;
+  align-self: stretch;
+  inline-size: 100%;
+  border: 1px solid #cdcebd;
+  border-block-end: 0;
+}
+
+.portrait-space span {
+  inline-size: 3.2rem;
+  block-size: 1px;
+  background: #b1b69c;
+}
+
+figcaption {
+  inline-size: 100%;
+  padding-block: 1.1rem 1.4rem;
+  color: #646b57;
+  border: 1px solid #cdcebd;
+  border-block-start: 0;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  .memorial {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 2.75rem;
+    min-block-size: 100svh;
+    padding-block: 3.5rem;
+  }
+
+  .dedication {
+    padding: 0;
+    text-align: center;
+    max-inline-size: 100%;
+  }
+
+  .quiet-mark,
+  .olive {
+    margin-inline: auto;
+  }
+
+  .quiet-mark { margin-block-end: 1.5rem; }
+  h1 { font-size: clamp(2.4rem, 9vw, 3.6rem); }
+  .dedication p { margin-block-start: 0.9rem; }
+  .olive { margin-block-start: 1.6rem; }
+  .portrait { inline-size: min(100%, 340px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto; }
+}

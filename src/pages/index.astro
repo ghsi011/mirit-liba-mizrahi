@@ -1,0 +1,58 @@
+---
+import { Image } from 'astro:assets';
+import '@fontsource/noto-serif-hebrew/hebrew-400.css';
+import { memorial } from '../content/memorial';
+import '../styles/global.css';
+
+const title = `${memorial.name} | ${memorial.dedication}`;
+const canonical = new URL(import.meta.env.BASE_URL, Astro.site);
+---
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={`${memorial.name}. ${memorial.dedication}.`} />
+    <meta name="theme-color" content="#f5f3ec" />
+    <title>{title}</title>
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} type="image/svg+xml" />
+  </head>
+  <body>
+    <main class="memorial" aria-labelledby="memorial-name">
+      <div class="dedication">
+        <span class="quiet-mark" aria-hidden="true"></span>
+        <h1 id="memorial-name">{memorial.name}</h1>
+        <p>{memorial.dedication}</p>
+        <svg class="olive" viewBox="0 0 88 40" fill="none" aria-hidden="true">
+          <path d="M13 33C29 31 47 21 74 8" />
+          <path d="M30 28C21 28 17 22 17 17C24 17 30 21 30 28Z" />
+          <path d="M44 21C34 20 31 14 32 9C39 10 44 15 44 21Z" />
+          <path d="M46 21C53 29 61 28 66 24C60 19 53 18 46 21Z" />
+          <path d="M61 14C55 9 55 4 58 1C64 3 66 8 61 14Z" />
+        </svg>
+      </div>
+      <figure class:list={['portrait', { 'portrait--empty': !memorial.photo }]}>
+        {memorial.photo ? (
+          <Image
+            src={memorial.photo.src}
+            alt={memorial.photo.alt}
+            widths={[400, 800, 1200]}
+            sizes="(max-width: 700px) 78vw, 400px"
+            format="webp"
+            quality={85}
+            loading="eager"
+            decoding="async"
+          />
+        ) : (
+          <>
+            <div class="portrait-space" aria-hidden="true">
+              <span></span>
+            </div>
+            <figcaption>מקום לתמונה</figcaption>
+          </>
+        )}
+      </figure>
+    </main>
+  </body>
+</html>

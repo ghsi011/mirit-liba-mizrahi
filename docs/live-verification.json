@@ -1,0 +1,28 @@
+{
+  "url": "https://ghsi011.github.io/mirit-liba-mizrahi/",
+  "status": 200,
+  "exact_name": true,
+  "approved_dedication": true,
+  "placeholder": true,
+  "hebrew_rtl": true,
+  "no_client_scripts": true,
+  "assets": [
+    {
+      "url": "https://ghsi011.github.io/mirit-liba-mizrahi/_astro/noto-serif-hebrew-hebrew-400-normal.jyUp5Tfv.woff",
+      "status": 200,
+      "bytes": 9884
+    },
+    {
+      "url": "https://ghsi011.github.io/mirit-liba-mizrahi/_astro/noto-serif-hebrew-hebrew-400-normal.v_xU1ROG.woff2",
+      "status": 200,
+      "bytes": 7808
+    },
+    {
+      "url": "https://ghsi011.github.io/mirit-liba-mizrahi/favicon.svg",
+      "status": 200,
+      "bytes": 330
+    }
+  ],
+  "matches_verified_html_bytes": true,
+  "verifiedSourceCommit": "5f6372061b32f75c7379ca96fb60d8e6a720e594"
+}

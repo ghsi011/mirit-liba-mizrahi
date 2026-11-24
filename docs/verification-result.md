@@ -1,6 +1,10 @@
 # Verification result — 2026-11-24
 
-Status: local production verification passed. GitHub repository creation, Actions execution, and live Pages publication remain unverified because this session has no authenticated GitHub browser or CLI capable of creating/configuring the repository. The connected GitHub read tool identified owner `ghsi011`; `ghsi011/mirit-liba-mizrahi` returned 404 when checked. No existing repository was repurposed.
+Status: published at https://ghsi011.github.io/mirit-liba-mizrahi/ . The new public repository belongs to the verified GitHub account `ghsi011`. The original verified bundle was transferred to the authenticated laptop with a matching SHA-256 digest and source commit; the site was not rebuilt from scratch. GitHub Actions ran the complete verification suite with its standard Chromium 159 runtime and deployed successfully.
+
+A live HTTP check returned 200, confirmed the exact approved name, dedication, Hebrew RTL, empty photo state, and absence of client scripts. Both font files and the favicon returned 200. The served HTML matched the original verified production HTML byte for byte. See [live verification data](live-verification.json) and the [first successful workflow](https://github.com/ghsi011/mirit-liba-mizrahi/actions/runs/45383136759).
+
+The sections below retain the initial local verification details. Its temporary browser substitution was no longer needed on GitHub's runner.
 
 ## Executed checks
 
@@ -21,8 +25,13 @@ PLAYWRIGHT_CHROMIUM_EXECUTABLE=/tmp/memorial-browser/chromium-launcher \
 ASTRO_TELEMETRY_DISABLED=1 npm run verify
 ```
 
-The temporary launcher used `/tmp/chromium --single-process --no-zygote --disable-gpu`. It is not part of the repository. On a normal development machine or GitHub runner, use the documented Playwright installation and `npm run verify` without the override. The checked-in CI workflow has not yet run on GitHub.
+The temporary launcher used `/tmp/chromium --single-process --no-zygote --disable-gpu`. It is not part of the repository. On a normal development machine or GitHub runner, use the documented Playwright installation and `npm run verify` without the override. The same checked-in CI workflow subsequently passed on GitHub with the normal Playwright-managed Chromium runtime.
 
-## Remaining action
+## Publication evidence
 
-Using authenticated access to the existing owner `ghsi011`, recheck repository-name availability, create a new public `mirit-liba-mizrahi` repository, push the reviewed `main` branch, and set Pages' source to GitHub Actions. Let the verification/deployment workflow finish, then verify the actual public URL and its assets before calling it live. Do not invite collaborators or add content beyond the approved scope.
+- Public repository: https://github.com/ghsi011/mirit-liba-mizrahi
+- Public site: https://ghsi011.github.io/mirit-liba-mizrahi/
+- First deployed source commit: `5f6372061b32f75c7379ca96fb60d8e6a720e594`
+- First successful workflow: https://github.com/ghsi011/mirit-liba-mizrahi/actions/runs/45383136759
+- Pages build type: GitHub Actions; HTTPS enforced.
+- No collaborators were invited. Public page content remains the approved minimal scope.

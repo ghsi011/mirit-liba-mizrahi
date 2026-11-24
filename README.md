@@ -1,5 +1,7 @@
 # מירית ליבה-מזרחי
 
+[Open the memorial](https://ghsi011.github.io/mirit-liba-mizrahi/) · [Verification and deployment](https://github.com/ghsi011/mirit-liba-mizrahi/actions)
+
 A small Hebrew memorial. Astro builds a static page with self-hosted typography and no visitor JavaScript or tracking. The initial page contains only the approved name, dedication, and a labeled photograph placeholder.
 
 ## Run locally
@@ -48,7 +50,7 @@ The repository and its history are public. Keep private family information, unap
 
 ## Deployment
 
-The intended repository is `ghsi011/mirit-liba-mizrahi`. GitHub Pages must use **GitHub Actions** as its publishing source. The checked deployment workflow builds and publishes this project. In `astro.config.mjs`, `site` identifies the account and `base` identifies the project subpath. Keep both aligned with the repository.
+The public repository is `ghsi011/mirit-liba-mizrahi`. GitHub Pages uses **GitHub Actions** as its publishing source. The checked deployment workflow builds and publishes this project. In `astro.config.mjs`, `site` identifies the account and `base` identifies the project subpath. Keep both aligned with the repository.
 
 ## Ask a coding agent
 

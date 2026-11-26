@@ -1,22 +1,30 @@
 ---
-import { Image } from 'astro:assets';
-import '@fontsource/noto-serif-hebrew/hebrew-400.css';
-import { memorial } from '../content/memorial';
-import '../styles/global.css';
+import { Image } from "astro:assets";
+import "@fontsource/noto-serif-hebrew/hebrew-400.css";
+import { memorial } from "../content/memorial";
+import "../styles/global.css";
 
 const title = `${memorial.name} | ${memorial.dedication}`;
 const canonical = new URL(import.meta.env.BASE_URL, Astro.site);
 ---
+
 <!doctype html>
 <html lang="he" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={`${memorial.name}. ${memorial.dedication}.`} />
+    <meta
+      name="description"
+      content={`${memorial.name}. ${memorial.dedication}.`}
+    />
     <meta name="theme-color" content="#f5f3ec" />
     <title>{title}</title>
     <link rel="canonical" href={canonical} />
-    <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} type="image/svg+xml" />
+    <link
+      rel="icon"
+      href={`${import.meta.env.BASE_URL}favicon.svg`}
+      type="image/svg+xml"
+    />
   </head>
   <body>
     <main class="memorial" aria-labelledby="memorial-name">
@@ -32,7 +40,7 @@ const canonical = new URL(import.meta.env.BASE_URL, Astro.site);
           <path d="M61 14C55 9 55 4 58 1C64 3 66 8 61 14Z" />
         </svg>
       </div>
-      <figure class:list={['portrait', { 'portrait--empty': !memorial.photo }]}>
+      <figure class:list={["portrait", { "portrait-empty": !memorial.photo }]}>
         {memorial.photo ? (
           <Image
             src={memorial.photo.src}

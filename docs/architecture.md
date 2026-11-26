@@ -8,7 +8,7 @@ Two shapes were considered: Markdown content collections and a single JSON docum
 
 The photo is either null or one complete object with a safe local filename and nonempty alternative text. It is never several independent booleans. A missing file stops the build. Astro resolves and optimizes local images, so generated image URLs include the project base path. The source photo still exists in public Git history, so the family must approve it and remove private metadata before committing.
 
-Astro generates static HTML. Fonts are bundled locally. No browser JavaScript or network service is necessary to read the page. Native HTML, logical CSS, and a responsive grid provide the entire interaction model.
+Astro generates static HTML. Fonts are bundled locally. No browser JavaScript or network service is necessary to read the page. Native HTML and logical CSS are the default. Add browser JavaScript only when a family-requested feature justifies it, without making the memorial itself depend on it.
 
 ## Checks as constraints
 

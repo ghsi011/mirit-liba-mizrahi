@@ -2,7 +2,7 @@
 
 [Open the memorial](https://ghsi011.github.io/mirit-liba-mizrahi/) · [Verification and deployment](https://github.com/ghsi011/mirit-liba-mizrahi/actions)
 
-A small Hebrew memorial. Astro builds a static page with self-hosted typography and no visitor JavaScript or tracking. The initial page contains only the approved name, dedication, and a labeled photograph placeholder.
+A small Hebrew memorial. Astro builds a static page with self-hosted typography and no tracking. The memorial is readable without JavaScript. The initial page contains only the approved name, dedication, and a labeled photograph placeholder.
 
 ## Run locally
 
@@ -18,12 +18,12 @@ Open the local URL printed by Astro, including `/mirit-liba-mizrahi/`.
 Before sharing a change:
 
 ```sh
-npm run check
-npm run build
 npm run verify
 ```
 
-`verify` exercises the production page at its GitHub Pages project subpath. See [verification](docs/verification.md) for browser setup and evidence, [architecture](docs/architecture.md) for the design, and [guidance](docs/guidance.md) for the primary skill sources.
+`npm run format` fixes formatting locally. `npm run format:check` and `npm run lint` check formatting, JavaScript and Astro templates, and CSS without modifying files. `npm run lint:html` validates the rendered HTML after `npm run build`.
+
+`verify` runs these checks and exercises the production page at its GitHub Pages project subpath. See [verification](docs/verification.md) for browser setup and evidence, [architecture](docs/architecture.md) for the design, and [guidance](docs/guidance.md) for the primary skill sources.
 
 ## Edit the content
 

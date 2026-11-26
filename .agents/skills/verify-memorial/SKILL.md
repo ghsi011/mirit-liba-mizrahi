@@ -1,6 +1,6 @@
 ---
 name: verify-memorial
-description: Run and inspect the Mirit Liba-Mizrahi memorial production page, photo states, and GitHub Pages deployment when verifying a change.
+description: Run and inspect the Mirit Leiba-Mizrahi memorial production page, photo states, and GitHub Pages deployment when verifying a change.
 ---
 
 # Verify the memorial

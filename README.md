@@ -2,7 +2,7 @@
 
 [Open the memorial](https://ghsi011.github.io/mirit-liba-mizrahi/) · [Verification and deployment](https://github.com/ghsi011/mirit-liba-mizrahi/actions)
 
-A small Hebrew memorial. Astro builds a static page with self-hosted typography and no tracking. The memorial is readable without JavaScript. The initial page contains only the approved name, dedication, and a labeled photograph placeholder.
+A small Hebrew memorial for Mirit Leiba-Mizrahi. Astro builds a static page with self-hosted typography and no tracking. The memorial is readable without JavaScript. The initial page contains only the approved name, dedication, and a labeled photograph placeholder.
 
 ## Run locally
 

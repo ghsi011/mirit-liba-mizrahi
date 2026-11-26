@@ -10,9 +10,9 @@ npm run verify
 
 If the browser download is unavailable but a supported Chromium is already installed, set `PLAYWRIGHT_CHROMIUM_EXECUTABLE` to its absolute executable path. The report records this explicit browser-only substitution and its version. CI uses the Playwright-managed browser by default.
 
-The single verification command runs Astro's checker, builds the production page, and tests the actual HTML through a strict local server mounted at `/mirit-liba-mizrahi/`. It does not serve root-level asset URLs as a fallback.
+The single verification command checks formatting with Prettier and its Astro plugin, lints JavaScript and Astro components with ESLint, and lints standalone CSS and Astro style blocks with Stylelint. It runs Astro's checker, builds the page, validates the generated HTML with HTML-Validate’s recommended preset, and tests the actual HTML through a strict local server mounted at `/mirit-liba-mizrahi/`. It does not serve root-level asset URLs as a fallback.
 
-The check covers current content, a forced placeholder, and a geometric test photograph at widths of 320, 390, and 1440 pixels. It verifies the exact heading, Hebrew RTL attributes, current dedication, visible placeholder or decoded photograph, local asset loading, no horizontal overflow, no page errors, no shipped scripts, no external requests, and automated WCAG A/AA rules. It also opens the site with JavaScript disabled. Automated accessibility checks do not replace human visual review.
+The check covers current content, a forced placeholder, and a geometric test photograph at widths of 320, 390, and 1440 pixels. It verifies the exact heading, Hebrew RTL attributes, current dedication, visible placeholder or decoded photograph, local asset loading, no horizontal overflow, no page errors, no external requests, and automated WCAG A/AA rules. It also checks that the heading, dedication and photo or placeholder remain visible with JavaScript disabled. CI runs the same command without rewriting files. Automated accessibility checks do not replace human visual review.
 
 The temporary variants are built outside the source tree and deleted afterward. They never alter approved content or the deployable `dist` output. Negative builds must reject a missing image, a changed name, and an unsafe photo path. The test image is two colored rectangles, not a person.
 

@@ -6,11 +6,13 @@
   color: #343c30;
   background: #f5f3ec;
   font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -41,7 +43,7 @@ body {
 }
 
 h1 {
-  font-family: 'Noto Serif Hebrew', Georgia, serif;
+  font-family: "Noto Serif Hebrew", Georgia, serif;
   font-weight: 400;
   font-size: clamp(2.65rem, 5.3vw, 4.9rem);
   line-height: 1.5;
@@ -90,7 +92,7 @@ h1 {
   object-fit: contain;
 }
 
-.portrait--empty {
+.portrait-empty {
   grid-template-rows: 1fr auto;
   background: linear-gradient(155deg, #efeee6, #e8e7dc);
 }
@@ -121,7 +123,7 @@ figcaption {
   line-height: 1.6;
 }
 
-@media (max-width: 700px) {
+@media (width <= 700px) {
   .memorial {
     grid-template-columns: 1fr;
     justify-items: center;
@@ -141,13 +143,31 @@ figcaption {
     margin-inline: auto;
   }
 
-  .quiet-mark { margin-block-end: 1.5rem; }
-  h1 { font-size: clamp(2.4rem, 9vw, 3.6rem); }
-  .dedication p { margin-block-start: 0.9rem; }
-  .olive { margin-block-start: 1.6rem; }
-  .portrait { inline-size: min(100%, 340px); }
+  .quiet-mark {
+    margin-block-end: 1.5rem;
+  }
+
+  h1 {
+    font-size: clamp(2.4rem, 9vw, 3.6rem);
+  }
+
+  .dedication p {
+    margin-block-start: 0.9rem;
+  }
+
+  .olive {
+    margin-block-start: 1.6rem;
+  }
+
+  .portrait {
+    inline-size: min(100%, 340px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto;
+  }
 }

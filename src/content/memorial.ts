@@ -1,19 +1,23 @@
-import type { ImageMetadata } from 'astro';
-import { z } from 'zod';
-import content from './memorial.json';
+import type { ImageMetadata } from "astro";
+import { z } from "zod";
+import content from "./memorial.json";
 
 const schema = z.strictObject({
-  name: z.literal('מירית ליבה-מזרחי'),
+  name: z.literal("מירית ליבה-מזרחי"),
   dedication: z.string().trim().min(1).max(140),
-  photo: z.strictObject({
-    file: z.string().regex(/^[a-zA-Z0-9][a-zA-Z0-9_-]*\.(jpg|jpeg|png|webp|avif)$/),
-    alt: z.string().trim().min(1).max(240),
-  }).nullable(),
+  photo: z
+    .strictObject({
+      file: z
+        .string()
+        .regex(/^[a-zA-Z0-9][a-zA-Z0-9_-]*\.(jpg|jpeg|png|webp|avif)$/),
+      alt: z.string().trim().min(1).max(240),
+    })
+    .nullable(),
 });
 
 const approved = schema.parse(content);
 const photographs = import.meta.glob<{ default: ImageMetadata }>(
-  '../assets/photos/*.{jpg,jpeg,png,webp,avif}',
+  "../assets/photos/*.{jpg,jpeg,png,webp,avif}",
   { eager: true },
 );
 const photograph = approved.photo
@@ -27,7 +31,8 @@ if (approved.photo && !photograph) {
 export const memorial = {
   name: approved.name,
   dedication: approved.dedication,
-  photo: approved.photo && photograph
-    ? { src: photograph, alt: approved.photo.alt }
-    : null,
+  photo:
+    approved.photo && photograph
+      ? { src: photograph, alt: approved.photo.alt }
+      : null,
 };
